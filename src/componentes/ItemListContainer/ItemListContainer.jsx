@@ -6,7 +6,7 @@ const ItemListContainer = ({titulo, lista}) => {
                 {titulo}
             </h2>
 
-            <p class="text-center">{lista}</p>
+            <p className="text-center">{lista}</p>
         </>
     )
 }
