@@ -7,7 +7,7 @@ const NavBar = () => {
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
                     <div className="iconTitle d-flex justify-content-center align-items-center nav-link">
-                        <img src="public\img\logo.jpg" alt="logo" className="logo img-fluid rounded-circle me-2" />
+                        <img src="/img/logo.jpg" alt="logo" className="logo img-fluid rounded-circle me-2" />
                         <h1 className="titulo fw-bold">Frosty Bite</h1>
                     </div>
                     <CartWidget/>
