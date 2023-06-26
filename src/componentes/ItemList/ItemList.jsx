@@ -3,7 +3,7 @@ import './ItemList.css'
 
 const ItemList = ({productos}) => {
   return (
-    <div>
+    <div className="row d-flex justify-content-start align-items-center">
         {productos.map(producto => <Item key={producto.id} {...producto}/>)}
     </div>
   )

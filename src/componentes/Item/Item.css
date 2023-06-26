@@ -1,0 +1,20 @@
+.item{
+    background-color: rgb(2, 1, 94);
+    color: aliceblue;
+
+    border-radius: 10px;
+
+    width: 15rem;
+    height: 20rem;
+    margin: 5px;
+    padding: 10px;
+}
+
+.imgCard{
+    width: 150px;
+    height: 150px;
+}
+
+.item a{
+    text-decoration: none;
+}

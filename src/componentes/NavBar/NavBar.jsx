@@ -1,16 +1,21 @@
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
         <header id="inicio">
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <div className="iconTitle d-flex justify-content-center align-items-center nav-link">
-                        <img src="/img/logo.jpg" alt="logo" className="logo img-fluid rounded-circle me-2" />
-                        <h1 className="titulo fw-bold">Frosty Bite</h1>
-                    </div>
-                    <CartWidget/>
+                {/* iconTitle nav-link */}
+                    <Link to={"/"}>
+                        <div className="d-flex justify-content-center align-items-center">
+                            <img src="/img/logo.jpg" alt="logo" className="logo img-fluid rounded-circle me-2" />
+                            <h1 className="titulo fw-bold">Frosty Bite</h1>
+                        </div>
+                    </Link>
+
+                    <CartWidget />
                     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                         <span className="navbar-toggler-icon" />
                     </button>
@@ -22,19 +27,13 @@ const NavBar = () => {
                         <div className="offcanvas-body">
                             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                                 <li className="nav-item d-flex align-items-center justify-content-end m-2">
-                                    Inicio
+                                    <NavLink to={"/categoria/palitos"}>Palitos</NavLink>
                                 </li>
                                 <li className="nav-item d-flex align-items-center justify-content-end m-2">
-                                    Baldes
+                                    <NavLink to={"/categoria/baldes"}>Baldes</NavLink>
                                 </li>
                                 <li className="nav-item d-flex align-items-center justify-content-end m-2">
-                                    Postres
-                                </li>
-                                <li className="nav-item d-flex align-items-center justify-content-end m-2">
-                                    Tortas
-                                </li>
-                                <li className="nav-item d-flex align-items-center justify-content-end m-2">
-                                    Yogurt
+                                    <NavLink to={"/categoria/postres"}>Postres</NavLink>
                                 </li>
                             </ul>
                         </div>

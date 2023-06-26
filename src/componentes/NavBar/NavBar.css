@@ -1,24 +1,29 @@
-li{
-    cursor: pointer;
+header a {
+    text-decoration: none;
     color: aliceblue;
 }
 
-.iconTitle{
-    cursor: pointer;
+header li a {
+    font-size: 1.25rem;
+    transition: 0.25s;
 }
 
-header{
+header li a:hover {
+    transform: scale(1.25);
+}
+
+header {
     border-bottom: 1px black solid;
     background-color: rgb(2, 1, 94);
     color: aliceblue;
 }
 
-.offcanvas{
+.offcanvas {
     background-color: rgb(2, 1, 94);
     color: aliceblue;
 }
 
-.offcanvas-header{
+.offcanvas-header {
     border-bottom: 1px solid aliceblue;
 }
 
@@ -50,6 +55,6 @@ header{
 
 /* Boton Cerrar Navbar*/
 
-.btn-close{
+.btn-close {
     background-color: aliceblue;
 }
