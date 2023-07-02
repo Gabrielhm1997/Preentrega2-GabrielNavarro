@@ -1,6 +1,17 @@
 import './ItemDetails.css'
+import { ItemCount } from '../ItemCount/ItemCount'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-const ItemDetail = ({id, nombre, precio, img}) => {
+
+const ItemDetail = ({id, nombre, precio, img, stock}) => {
+
+  const [cantidadAgregada, setcantidadAgregada] = useState(0);
+
+  const manejadorCantidad = (cantidad) => {
+    setcantidadAgregada(cantidad);
+    console.log("Productos agregados:" + cantidad);
+  }
 
   return (
     <div className='itemDetail col-6 container-fluid row d-flex justify-content-center align-items-center'>
@@ -8,7 +19,10 @@ const ItemDetail = ({id, nombre, precio, img}) => {
       <h2 className='text-center'>{nombre}</h2>
       <h3 className='text-center'>${precio}</h3>
       <h3 className='text-center'>ID: {id}</h3>
-      <h3 className='text-center'>Unidades Disponibles: 10</h3>
+      <h3 className='text-center'>Unidades Disponibles: {stock}</h3>
+      
+      { cantidadAgregada > 0 ?  <Link to="/cart"> Terminar Compra</Link> : <ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad}/>}
+      
     </div>
   )
 }
