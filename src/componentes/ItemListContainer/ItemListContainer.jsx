@@ -20,7 +20,7 @@ const ItemListContainer = ({}) => {
 
     return (
         <>
-            <h2 className="text-center">{categoria ? categoria.toUpperCase() : "PRODUCTOS"}</h2>
+            <h2 className="text-center m-2">{categoria ? categoria.toUpperCase() : "PRODUCTOS"}</h2>
 
             <div className="container-fluid">
                 <ItemList productos={productos} />

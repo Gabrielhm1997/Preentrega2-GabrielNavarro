@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { getUnProducto } from "../../asyncmock"
 import ItemDetail from "../ItemDetail/ItemDetail";
-import './ItemDetailContainer.css'
 import { useParams } from "react-router-dom";
 
 
@@ -24,5 +23,5 @@ const ItemDetailContainer = () => {
     </div>
   )
 }
-
+ 
 export default ItemDetailContainer

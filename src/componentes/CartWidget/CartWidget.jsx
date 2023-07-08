@@ -9,7 +9,7 @@ const CartWidget = () => {
 
   return (
     <div className="cartWidget d-flex justify-content-center align-items-center">
-      <Link to="/cart">
+      <Link to="/cart" className='d-flex justify-content-center align-items-center'>
         <i className="bi bi-cart3 m-0 p-0 d-flex justify-content-center align-items-center"></i>
         {
           cantidadProductos > 0 && <strong> {cantidadProductos} </strong>
