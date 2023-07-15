@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { db } from "../../services/config";
 import { getDocs, collection, query, where } from "firebase/firestore";
 
+// import { cargarProductos } from "../../asyncmock";
+
 const ItemListContainer = ({}) => {
 
         const [productos, setProductos] = useState([]);
@@ -42,6 +44,8 @@ const ItemListContainer = ({}) => {
                 <div className="container-fluid">
                     <ItemList productos={productos} />
                 </div>
+
+                {/* <button type="button" onClick={cargarProductos}> Cargar Productos</button> */}
     
             </>
         )

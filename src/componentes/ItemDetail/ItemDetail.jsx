@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import { CarritoContext } from '../../context/CarritoContext'
 
 
-const ItemDetail = ({ id, nombre, precio, img, stock }) => {
+const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
 
   const [cantidadAgregada, setcantidadAgregada] = useState(0);
 
@@ -14,11 +14,10 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
 
   const manejadorCantidad = (cantidad) => {
     setcantidadAgregada(cantidad);
-    //console.log("Productos agregados:" + cantidad);
     const item = { id, nombre, precio, img };
     agregarProducto(item, cantidad);
   }
- 
+  
   return (
     <div className='itemDetail p-5 col-10 container-fluid row d-flex justify-content-center align-items-center'>
       <div className='col-6 d-flex justify-content-center align-items-center'>
@@ -26,6 +25,7 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
       </div>
       <div className='col-6'>
         <h2 className='text-center'>{nombre}</h2>
+        <h3 className='text-center'>{descripcion}</h3>
         <h3 className='text-center'>${precio}</h3>
         <h3 className='text-center'>ID: {id}</h3>
         <h3 className='text-center'>Unidades Disponibles: {stock}</h3>
