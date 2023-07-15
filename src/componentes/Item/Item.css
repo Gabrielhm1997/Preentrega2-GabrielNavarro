@@ -10,12 +10,29 @@
     padding: 10px;
 }
 
-.imgCard{
-    width: 150px;
-    height: 150px;
-}
 
 .item a{
     text-decoration: none;
 }
- 
+
+.contendor-imagen{
+    position: relative;
+}
+
+.imgCard{
+    width: 10rem;
+    height: 10rem;
+}
+
+.agotado{
+    height: 15rem;
+    width: auto; 
+    position: absolute;
+    transform: rotate(25deg);
+    
+}
+
+.no-agotado{
+    display: none;
+}
+
