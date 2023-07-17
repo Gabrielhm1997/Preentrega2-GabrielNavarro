@@ -58,3 +58,7 @@ header {
 .btn-close {
     background-color: aliceblue;
 }
+
+.active{
+    color: lime;
+}

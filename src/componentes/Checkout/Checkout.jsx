@@ -32,7 +32,9 @@ const Checkout = () => {
             items: carrito.map(producto => ({
                 id: producto.item.id,
                 nombre: producto.item.nombre,
-                cantidad: producto.cantidad
+                cantidad: producto.cantidad,
+                descripcion: producto.item.descripcion
+               
             })),
             total: precioTotal,
             nombre,
@@ -80,7 +82,7 @@ const Checkout = () => {
             <div className="checkout-container row">
                 {
                     cantidadProductos === 0 ?
-                        <>
+                        <div className="container-fluid">
                             <h2 className="text-center m-2">No hay productos en el carrito</h2>
                             <div className="container-fluid">
                                 <div className="row d-flex align-items-center justify-content-center">
@@ -89,7 +91,7 @@ const Checkout = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </> 
+                        </div> 
                         
                         :
 
@@ -141,6 +143,7 @@ const Checkout = () => {
                                         </div>
                                     ))}
                                 </ul>
+                                <h4 className="text-end">Precio total: $ {precioTotal}</h4>
                             </div>
                         </>
                 }

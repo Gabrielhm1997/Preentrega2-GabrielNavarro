@@ -1,10 +1,9 @@
-import './ItemDetails.css'
 import { ItemCount } from '../ItemCount/ItemCount'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { CarritoContext } from '../../context/CarritoContext'
-
+import './ItemDetails.css'
 
 const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
 
@@ -14,7 +13,7 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
 
   const manejadorCantidad = (cantidad) => {
     setcantidadAgregada(cantidad);
-    const item = { id, nombre, precio, img };
+    const item = { id, nombre, precio, img, descripcion };
     agregarProducto(item, cantidad);
   }
 
@@ -25,10 +24,6 @@ const ItemDetail = ({ id, nombre, precio, img, stock, descripcion }) => {
         <img src={img} alt={nombre} className="img-detalles" />
         <img className={stock === 0 ? "agotado-detalles" : "no-agotado"} src="/img/agotado.png"></img>
       </div>
-
-      {/* <div className='col-6 d-flex justify-content-center align-items-center'>
-        <img src={img} alt={nombre} className='img-detalles' />
-      </div> */}
 
       <div className='col-6'>
         <h2 className='text-center'>{nombre}</h2>

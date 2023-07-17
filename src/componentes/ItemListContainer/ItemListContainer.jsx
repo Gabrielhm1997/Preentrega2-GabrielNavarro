@@ -4,85 +4,47 @@ import { useParams } from "react-router-dom";
 import { db } from "../../services/config";
 import { getDocs, collection, query, where } from "firebase/firestore";
 
-// import { cargarProductos } from "../../asyncmock";
+const ItemListContainer = ({ }) => {
 
-const ItemListContainer = ({}) => {
+    const [productos, setProductos] = useState([]);
 
-        const [productos, setProductos] = useState([]);
-    
-        const { categoria } = useParams();
+    const { categoria } = useParams();
 
-        useEffect(() => {
+    useEffect(() => {
 
-            const getProductos = () => {
+        const getProductos = () => {
 
-                const inventario = query(collection(db, "inventario"));
-                
-                return inventario;
-            }
-            
-            const getCategoria = (idCategoria) => {
+            const inventario = query(collection(db, "inventario"));
 
-                const inventarioPorCategoria = query(collection(db, "inventario"), where("categoria", "==", idCategoria));
-                return inventarioPorCategoria;
-            }
+            return inventario;
+        }
 
-            const  funcionProductos =   categoria ? getCategoria : getProductos;
-    
-            getDocs(funcionProductos(categoria))
-                .then(respuesta => {
-                  setProductos(respuesta.docs.map((doc) => ({id: doc.id, ...doc.data()})));
-                })
-                .catch(error => console.log(error));
+        const getCategoria = (idCategoria) => {
 
-        }, [categoria])
-     
-        return (
-            <>
-                <h2 className="text-center m-2">{categoria ? categoria.toUpperCase() : "PRODUCTOS"}</h2>
-    
-                <div className="container-fluid">
-                    <ItemList productos={productos} />
-                </div>
+            const inventarioPorCategoria = query(collection(db, "inventario"), where("categoria", "==", idCategoria));
+            return inventarioPorCategoria;
+        }
 
-                {/* <button type="button" onClick={cargarProductos}> Cargar Productos</button> */}
-    
-            </>
-        )
-    }
-    
-    export default ItemListContainer
+        const funcionProductos = categoria ? getCategoria : getProductos;
 
-// import { useState, useEffect } from "react"
-// import ItemList from "../ItemList/ItemList"
-// import { getProductos, getCategoria } from "../../asyncmock";
-// import { useParams } from "react-router-dom";
+        getDocs(funcionProductos(categoria))
+            .then(respuesta => {
+                setProductos(respuesta.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+            })
+            .catch(error => console.log(error));
 
-// const ItemListContainer = ({}) => {
+    }, [categoria])
 
-//     const [productos, setProductos] = useState([]);
+    return (
+        <>
+            <h2 className="text-center m-2">{categoria ? categoria.toUpperCase() : "PRODUCTOS"}</h2>
 
-//     const { categoria } = useParams();
+            <div className="container-fluid">
+                <ItemList productos={productos} />
+            </div>
 
-//     useEffect(() => {
+        </>
+    )
+}
 
-//         const funcionProductos = categoria ? getCategoria : getProductos;
-
-//         funcionProductos(categoria)
-//             .then(respuesta => setProductos(respuesta))
-//             .catch(error => console.log(error))
-//     }, [categoria])
- 
-//     return (
-//         <>
-//             <h2 className="text-center m-2">{categoria ? categoria.toUpperCase() : "PRODUCTOS"}</h2>
-
-//             <div className="container-fluid">
-//                 <ItemList productos={productos} />
-//             </div>
-
-//         </>
-//     )
-// }
-
-// export default ItemListContainer
+export default ItemListContainer

@@ -1,13 +1,12 @@
-import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
 import { Link, NavLink } from 'react-router-dom'
+import './NavBar.css'
 
 const NavBar = () => {
     return (
         <header id="inicio">
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                {/* iconTitle nav-link */}
                     <Link to={"/"}>
                         <div className="d-flex justify-content-center align-items-center">
                             <img src="/img/logo.jpg" alt="logo" className="logo img-fluid rounded-circle me-2" />

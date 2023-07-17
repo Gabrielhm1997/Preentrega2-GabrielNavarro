@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore"
 
 //configuracion Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDyiS2TCQqsUDCgwZj3MVcVr_VSiQs_am4",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "proyecto-final-reactjs---coder.firebaseapp.com",
   projectId: "proyecto-final-reactjs---coder",
   storageBucket: "proyecto-final-reactjs---coder.appspot.com",
