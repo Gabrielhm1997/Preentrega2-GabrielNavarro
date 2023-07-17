@@ -1,9 +1,7 @@
 ﻿# Frosty Bite
 
 Frosty Bite es un proyecto realizado para el curso de React JS de CoderHouse. La aplicacion es un simulador de un Ecommerce basico,
-
 en ella pueden probar la navegacion entre un listado de productos y generar una ordende compra. Tanto los productos como las ordenes se
-
 almacenan en Firebase.
 
 ## Tecnologías Utilizadas
